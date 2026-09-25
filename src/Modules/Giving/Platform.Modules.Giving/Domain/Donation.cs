@@ -162,7 +162,14 @@ public sealed class Donation : TenantAggregateRoot
         StatusReason = reason;
     }
 
-    internal void AssignBatch(Guid? batchId) => BatchId = batchId;
+    public void AssignToBatch(Guid? batchId)
+    {
+        if (batchId != BatchId)
+        {
+            EnsureEditable();
+            BatchId = batchId;
+        }
+    }
 
     /// <summary>Set by the batch when it is closed: its donations become read-only.</summary>
     public bool IsLocked { get; private set; }
@@ -221,7 +228,7 @@ public sealed class Donation : TenantAggregateRoot
         }
 
         _allocations.Clear();
-        _allocations.AddRange(allocations.Select(a => new DonationAllocation(Id, a.FundId, decimal.Round(a.Amount, 2))));
+        _allocations.AddRange(allocations.Select(a => new DonationAllocation(Id, a.FundId, decimal.Round(a.Amount, 2, MidpointRounding.AwayFromZero))));
         Total = Money.Of(_allocations.Sum(a => a.Amount), currency);
     }
 }

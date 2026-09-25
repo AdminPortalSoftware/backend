@@ -1,5 +1,8 @@
 using Platform.Infrastructure.Modules;
+using Platform.Modules.Communications;
+using Platform.Modules.Content;
 using Platform.Modules.Events;
+using Platform.Modules.Giving;
 using Platform.Modules.Groups;
 using Platform.Modules.Identity;
 using Platform.Modules.People;
@@ -17,5 +20,8 @@ internal static class Modules
         new PeopleModule(),
         new GroupsModule(),
         new EventsModule(),
+        new GivingModule(),
+        new ContentModule(),
+        new CommunicationsModule(),
     ];
 }

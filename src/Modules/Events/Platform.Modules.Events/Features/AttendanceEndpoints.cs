@@ -295,8 +295,8 @@ public static class AttendanceEndpoints
                 x.o.Id, x.e.Id, x.e.Title, x.e.Type.ToString(), x.o.StartsAt,
                 db.Attendance.Count(a => a.OccurrenceId == x.o.Id),
                 db.Attendance.Count(a => a.OccurrenceId == x.o.Id && a.IsFirstVisit),
-                db.HeadCounts.Where(h => h.OccurrenceId == x.o.Id).Select(h => (int?)h.Total).FirstOrDefault(),
-                db.HeadCounts.Where(h => h.OccurrenceId == x.o.Id).Select(h => (int?)h.Online).FirstOrDefault()))
+                db.HeadCounts.Where(h => h.OccurrenceId == x.o.Id).Max(h => (int?)h.Total),
+                db.HeadCounts.Where(h => h.OccurrenceId == x.o.Id).Max(h => (int?)h.Online)))
             .ToListAsync(ct);
 
         return Results.Ok(rows);

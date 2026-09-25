@@ -243,10 +243,12 @@ public static class PeopleEndpoints
         var birthdays = await db.People.AsNoTracking()
             .Where(p => p.DateOfBirth != null && days.Contains(p.DateOfBirth.Value.Month * 100 + p.DateOfBirth.Value.Day))
             .Select(p => new { p.Id, Name = (p.PreferredName ?? p.FirstName) + " " + p.LastName, Date = p.DateOfBirth!.Value, p.PhotoUrl })
+            .OrderBy(p => p.Id)
             .Take(200).ToListAsync(ct);
         var anniversaries = await db.People.AsNoTracking()
             .Where(p => p.WeddingAnniversary != null && days.Contains(p.WeddingAnniversary.Value.Month * 100 + p.WeddingAnniversary.Value.Day))
             .Select(p => new { p.Id, Name = (p.PreferredName ?? p.FirstName) + " " + p.LastName, Date = p.WeddingAnniversary!.Value, p.PhotoUrl })
+            .OrderBy(p => p.Id)
             .Take(200).ToListAsync(ct);
 
         IReadOnlyList<CelebrationItem> Order(IEnumerable<(Guid Id, string Name, DateOnly Date, string? PhotoUrl)> items) =>

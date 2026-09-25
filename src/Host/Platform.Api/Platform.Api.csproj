@@ -24,6 +24,9 @@
     <ProjectReference Include="..\..\Modules\People\Platform.Modules.People\Platform.Modules.People.csproj" />
     <ProjectReference Include="..\..\Modules\Groups\Platform.Modules.Groups\Platform.Modules.Groups.csproj" />
     <ProjectReference Include="..\..\Modules\Events\Platform.Modules.Events\Platform.Modules.Events.csproj" />
+    <ProjectReference Include="..\..\Modules\Giving\Platform.Modules.Giving\Platform.Modules.Giving.csproj" />
+    <ProjectReference Include="..\..\Modules\Content\Platform.Modules.Content\Platform.Modules.Content.csproj" />
+    <ProjectReference Include="..\..\Modules\Communications\Platform.Modules.Communications\Platform.Modules.Communications.csproj" />
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="Platform.IntegrationTests" />

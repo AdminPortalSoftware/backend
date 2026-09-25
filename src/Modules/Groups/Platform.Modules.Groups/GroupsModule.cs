@@ -16,6 +16,7 @@ public sealed class GroupsModule : IModule
     public void Register(IServiceCollection services, IConfiguration configuration)
     {
         services.AddModuleDbContext<GroupsDbContext>(configuration, GroupsDbContext.SchemaName);
+        services.AddScoped<Platform.Modules.Groups.Contracts.IGroupDirectory, GroupDirectory>();
         services.AddHandlersAndValidators(typeof(GroupsModule).Assembly);
     }
 
