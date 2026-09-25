@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\Modules\Identity\Platform.Modules.Identity\Platform.Modules.Identity.csproj" />
     <ProjectReference Include="..\..\Modules\People\Platform.Modules.People\Platform.Modules.People.csproj" />
     <ProjectReference Include="..\..\Modules\Groups\Platform.Modules.Groups\Platform.Modules.Groups.csproj" />
+    <ProjectReference Include="..\..\Modules\Events\Platform.Modules.Events\Platform.Modules.Events.csproj" />
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="Platform.IntegrationTests" />

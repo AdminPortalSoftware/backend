@@ -10,6 +10,10 @@
     <Project Path="src/Host/Platform.Api/Platform.Api.csproj" />
   </Folder>
   <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Events/">
+    <Project Path="src/Modules/Events/Platform.Modules.Events.Contracts/Platform.Modules.Events.Contracts.csproj" />
+    <Project Path="src/Modules/Events/Platform.Modules.Events/Platform.Modules.Events.csproj" />
+  </Folder>
   <Folder Name="/src/Modules/Groups/">
     <Project Path="src/Modules/Groups/Platform.Modules.Groups/Platform.Modules.Groups.csproj" />
   </Folder>

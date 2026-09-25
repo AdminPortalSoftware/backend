@@ -1,4 +1,5 @@
 using Platform.Infrastructure.Modules;
+using Platform.Modules.Events;
 using Platform.Modules.Groups;
 using Platform.Modules.Identity;
 using Platform.Modules.People;
@@ -15,5 +16,6 @@ internal static class Modules
         new IdentityModule(),
         new PeopleModule(),
         new GroupsModule(),
+        new EventsModule(),
     ];
 }

@@ -13,7 +13,7 @@ using Platform.Modules.Tenancy.Infrastructure;
 namespace Platform.Modules.Tenancy.Infrastructure.Migrations
 {
     [DbContext(typeof(TenancyDbContext))]
-    [Migration("20260925105244_InitialCreate")]
+    [Migration("20260925110302_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -51,8 +51,8 @@ namespace Platform.Modules.Tenancy.Infrastructure.Migrations
 
                     b.Property<string>("EntityId")
                         .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)")
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)")
                         .HasColumnName("entity_id");
 
                     b.Property<string>("EntityType")

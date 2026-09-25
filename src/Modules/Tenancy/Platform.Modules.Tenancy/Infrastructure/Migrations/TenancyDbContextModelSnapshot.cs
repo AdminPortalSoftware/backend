@@ -48,8 +48,8 @@ namespace Platform.Modules.Tenancy.Infrastructure.Migrations
 
                     b.Property<string>("EntityId")
                         .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)")
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)")
                         .HasColumnName("entity_id");
 
                     b.Property<string>("EntityType")

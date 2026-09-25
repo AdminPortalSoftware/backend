@@ -27,14 +27,14 @@ foreach (var module in Modules.All)
 var app = builder.Build();
 
 app.UseForwardedHeaders();
-app.UseExceptionHandler();
-app.UseStatusCodePages();
-app.UseMiddleware<SecurityHeadersMiddleware>();
 app.UseSerilogRequestLogging(o => o.EnrichDiagnosticContext = (diag, http) =>
 {
     diag.Set("TenantId", http.User.FindFirst("tid")?.Value ?? http.Request.Headers[TenantResolutionMiddleware.TenantHeader].ToString());
     diag.Set("UserId", http.User.FindFirst("sub")?.Value);
 });
+app.UseExceptionHandler();
+app.UseStatusCodePages();
+app.UseMiddleware<SecurityHeadersMiddleware>();
 
 if (!app.Environment.IsDevelopment())
 {

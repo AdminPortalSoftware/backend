@@ -9,7 +9,7 @@ using Platform.Modules.Events.Domain;
 namespace Platform.Modules.Events.Infrastructure;
 
 /// <summary>Keeps recurring events materialised for the scheduling horizon (runs hourly).</summary>
-internal sealed partial class OccurrenceScheduler(IServiceScopeFactory scopes, TimeProvider clock, ILogger<OccurrenceScheduler> logger) : BackgroundService
+internal sealed partial class OccurrenceScheduler(IServiceScopeFactory scopes, ILogger<OccurrenceScheduler> logger) : BackgroundService
 {
     public static readonly TimeSpan Horizon = TimeSpan.FromDays(120);
 

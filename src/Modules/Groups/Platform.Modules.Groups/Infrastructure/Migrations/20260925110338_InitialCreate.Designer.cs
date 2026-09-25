@@ -12,7 +12,7 @@ using Platform.Modules.Groups.Infrastructure;
 namespace Platform.Modules.Groups.Infrastructure.Migrations
 {
     [DbContext(typeof(GroupsDbContext))]
-    [Migration("20260925105916_InitialCreate")]
+    [Migration("20260925110338_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -50,8 +50,8 @@ namespace Platform.Modules.Groups.Infrastructure.Migrations
 
                     b.Property<string>("EntityId")
                         .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("character varying(64)")
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)")
                         .HasColumnName("entity_id");
 
                     b.Property<string>("EntityType")

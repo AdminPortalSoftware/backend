@@ -59,7 +59,7 @@ namespace Platform.Modules.Identity.Infrastructure.Migrations
                     user_id = table.Column<Guid>(type: "uuid", nullable: true),
                     module = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: false),
                     entity_type = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: false),
-                    entity_id = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: false),
+                    entity_id = table.Column<string>(type: "character varying(128)", maxLength: 128, nullable: false),
                     action = table.Column<string>(type: "character varying(16)", maxLength: 16, nullable: false),
                     changes = table.Column<string>(type: "jsonb", nullable: true),
                     ip_address = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: true),
